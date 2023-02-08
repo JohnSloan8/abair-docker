@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - abair
+      - bat
+  abair:
+    restart: on-failure
+    build: ./abair
+    ports:
+      - "8001:8001"
+  bat:
+    restart: on-failure
+    build: ./bat
+    ports:
+      - "8000:8000"
