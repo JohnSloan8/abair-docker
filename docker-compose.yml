@@ -10,8 +10,8 @@ services:
     build: ./bat
     ports:
       - 8001:8001
-  error-check:
-    restart: on-failure
-    build: ./error-check
-    ports:
-      - 8002:8002
+  # error-check:
+  #   restart: on-failure
+  #   build: ./error-check
+  #   ports:
+  #     - 8002:8002
