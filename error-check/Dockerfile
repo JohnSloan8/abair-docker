@@ -11,4 +11,4 @@ COPY dist ./dist
 
 EXPOSE 8002
 
-CMD ["node", "run-server.js"]
+CMD ["node", "./dist/run-server.js"]

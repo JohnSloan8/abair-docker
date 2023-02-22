@@ -1,17 +1,17 @@
 import express from "express";
 import cors from "cors";
+import runErrorCheck from "./runErrorCheck.js";
 const app = express();
-app.use(express.json());
-app.use(cors());
 const host = "localhost";
 const port = 8002;
-import runErrorCheck from "./runErrorCheck.js";
-app.post("/", function (req, res) {
+app.use(express.json());
+app.use(cors());
+app.post("/api/error-check/run-full-check", function (req, res) {
     const { word, target } = req.body;
     const errorCheckOutput = runErrorCheck(word, target);
     res.send(`${JSON.stringify(errorCheckOutput)}`);
 });
-app.get("/home", (req, res) => {
+app.get("/api/error-check/", (req, res) => {
     res.send("Welcome to Error Check!");
 });
 app.listen(port, function (error) {
