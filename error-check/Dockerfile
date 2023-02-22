@@ -6,7 +6,6 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY run-server.js ./
 COPY dist ./dist
 
 EXPOSE 8002
