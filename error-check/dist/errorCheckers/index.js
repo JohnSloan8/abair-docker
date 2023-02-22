@@ -1,5 +1,4 @@
-// import caolLeathanChecker from "./caolLeathanChecker";
-import conjugationChecker from "./conjugationChecker";
-import fadaChecker from "./fadaChecker";
-import typoChecker from "./typoChecker";
+import conjugationChecker from "./conjugationChecker/conjugationChecker.js";
+import fadaChecker from "./fadaChecker.js";
+import typoChecker from "./typoChecker.js";
 export { conjugationChecker, fadaChecker, typoChecker };
