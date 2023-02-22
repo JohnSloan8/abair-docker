@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 
 const host = "localhost";
-const port = 8001;
+const port = 8000;
 
 // Static Middleware
 app.use("/assets", express.static(path.join(__dirname, "./dist/assets")));
