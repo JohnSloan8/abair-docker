@@ -1,0 +1,1 @@
+import{R as s,d as o}from"./setPrototypeOf.fd4aa278.js";const n=s({key:"profile",default:void 0}),d=()=>{const[e,t]=o(n);return{profile:e,setProfile:t}},r=s({key:"dialects",default:void 0}),c=()=>{const[e,t]=o(r);return{dialects:e,setDialects:t}},i=s({key:"genders",default:void 0}),l=()=>{const[e,t]=o(i);return{genders:e,setGenders:t}};export{c as a,l as b,d as u};
