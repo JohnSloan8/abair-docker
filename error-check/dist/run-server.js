@@ -9,7 +9,9 @@ app.use(cors());
 app.post("/run-full-check", function (req, res) {
     const { word, target } = req.body;
     const errorCheckOutput = runErrorCheck(word, target);
-    res.send(`${JSON.stringify(errorCheckOutput)}`);
+    const output = JSON.stringify(errorCheckOutput);
+    console.log("error check output:", output);
+    res.send(output);
 });
 app.get("/", (req, res) => {
     res.send("Welcome to Error Check!");
