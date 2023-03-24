@@ -1,10 +1,23 @@
 const fadaChecker = (word, target) => {
     const FADAS = ["á", "é", "í", "ó", "ú"];
     const NON_FADAS = ["a", "e", "i", "o", "u"];
+    const CONSONANTS = ["b", "c", "d", "f", "g", "l", "m", "n", "p", "r", "s", "t"];
+    var consonantsInRightPlace = true;
     // make it so the program only runs as long as the length of the shorter word
     let shorterWordLength = target.length;
     if (word.length < target.length) {
         shorterWordLength = word.length;
+    }
+    for (let i = 0; i < shorterWordLength; i++) {
+        //let tLetter = target.charAt(i);
+        //let wLetter = word.charAt(i);
+        for (let indexConsonants = 0; indexConsonants < 12; indexConsonants++) {
+            if (target.charAt(i) == CONSONANTS[indexConsonants]) {
+                if (word.charAt(i) != CONSONANTS[indexConsonants]) {
+                    consonantsInRightPlace = false;
+                }
+            }
+        }
     }
     for (let i = 0; i < shorterWordLength; i++) {
         let targetLetter = target.charAt(i);
@@ -14,7 +27,7 @@ const fadaChecker = (word, target) => {
             if (targetLetter == FADAS[fadaIndex]) {
                 let actualLetter = word.charAt(i);
                 if (actualLetter == NON_FADAS[fadaIndex]) {
-                    return "there has been a fada left out";
+                    return "omittedFada";
                 }
             }
         }
@@ -24,7 +37,7 @@ const fadaChecker = (word, target) => {
             if (targetLetter == NON_FADAS[nonFadaIndex]) {
                 let actualLetter = word.charAt(i);
                 if (actualLetter == FADAS[nonFadaIndex]) {
-                    return "there has been an extra fada added in";
+                    return "extraFada";
                 }
             }
         }
