@@ -1,7 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
-// import determineConfusionLevel from "./determineConfusionLevel";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 let allQuestions;
@@ -18,7 +17,7 @@ fs.readFile(path.join(__dirname, "allQuestions.json"), (err, data) => {
     allQuestions.map((q) => {
         !allPossibleAnswers.includes(q.answer)
             ? allPossibleAnswers.push(q.answer)
-            : null; // loop through all questions and push ansewr to this array if it not already there
+            : null; // loop through all questions and push answer to this array if it not already there
     });
     // log this array just to have a look
     // console.log("allPossibleAnswers:", allPossibleAnswers);
