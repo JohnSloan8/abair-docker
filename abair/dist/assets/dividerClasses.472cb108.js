@@ -1,0 +1,1 @@
+import{P as e,O as t}from"./App.2a6a570f.js";function s(i){return t("MuiDivider",i)}const r=e("MuiDivider",["root","absolute","fullWidth","inset","middle","flexItem","light","vertical","withChildren","withChildrenVertical","textAlignRight","textAlignLeft","wrapper","wrapperVertical"]),a=r;export{a as d,s as g};
