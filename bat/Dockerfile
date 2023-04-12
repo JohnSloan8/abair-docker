@@ -9,6 +9,6 @@ RUN npm install
 COPY run-server.js ./
 COPY dist ./dist
 
-EXPOSE 8000
+EXPOSE 8001
 
 CMD ["node", "run-server.js"]
