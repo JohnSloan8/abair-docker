@@ -1,0 +1,1 @@
+import{C as r}from"./App.56eb5b89.js";import{C as t}from"./ChatHistories.525d9af7.js";import{j as o}from"./setPrototypeOf.d3c81777.js";import"./index.641bb272.js";import"./index.a26076b0.js";import"./TotalPoints.4b8c561b.js";const s=()=>o(r,{mt:2,children:o(t,{showHowMany:1e3})}),f=s;export{f as default};

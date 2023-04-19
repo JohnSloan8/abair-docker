@@ -1,4 +1,5 @@
-const e={home:"Home",chat:"Chat",history:"My History"},t={stats:"My Stats",verb:"Verb",tense:"Tense",form:"Form"},o={welcome:{text_01:"Welcome to ",text_02:"Welcome to Bat M\xEDrialta,",text_03:"Welcome to Bat M\xEDrialta, your irregular verb helper."},chooseTask:{text_01:"Choose a verb, ",text_02:"Choose a verb, tense,",text_03:"Choose a verb, tense, and form to practice.",text_04:`Choose a verb, tense, and form to practice.
+const e={home:"Home",chat:"Chat",history:"My History"},t={stats:"My Stats",verb:"Verb",tense:"Tense",form:"Form"},o={welcome:{text_01:"Welcome to ",text_02:"Welcome to Bat M\xEDrialta,",text_03:"Welcome to Bat M\xEDrialta, your irregular verb helper."},chooseTask:{text_01:"Choose a verb, ",text_02:"Choose a verb, tense,",text_03:`Choose a verb, tense, and form to practice.
+`,text_04:`Choose a verb, tense, and form to practice.
 I will ask you 10`,text_05:`Choose a verb, tense, and form to practice.
 I will ask you 10 'fill in the blank'`,text_06:`Choose a verb, tense, and form to practice.
 I will ask you 10 'fill in the blank' questions.`,text_07:`Choose a verb, tense, and form to practice.
