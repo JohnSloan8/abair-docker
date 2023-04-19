@@ -25,11 +25,8 @@ fs.readFile(path.join(__dirname, "allQuestions.json"), (err, data) => {
 // conjugation checker will use the 2 arrays to first check if there is a conjugation/form/tense/verb error, and if so, then determine the type.
 const conjugationChecker = (word, target) => {
     // first, check that the word and target are both in the 'allPossibleAnswers' array
-    console.log("allPossibleAnswers:", JSON.stringify(allPossibleAnswers));
     const wordInAnswers = allPossibleAnswers.includes(word);
     const targetInAnswers = allPossibleAnswers.includes(target);
-    console.log("wordInAnswers:", wordInAnswers);
-    console.log("targetInAnswers:", targetInAnswers);
     // console.log("word in Answers:", wordInAnswers);
     // console.log("target in Answers:", targetInAnswers);
     // only if both these exist (and are different) is this a conjugation/form/tense/verb error
