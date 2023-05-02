@@ -1,0 +1,1 @@
+import{a as r,j as t}from"./setPrototypeOf.96237ccd.js";import{o,C as i,T as n}from"./App.5847eb49.js";const h=({points:e})=>{const[a,s]=r.exports.useState(!1);return r.exports.useEffect(()=>{e!==0&&(s(!0),setTimeout(()=>{s(!1)},2e3))},[e]),t(o,{children:t(i,{sx:{position:"relative"},children:t(n,{variant:a?"h4":"h5",children:e})})})};export{h as T};
