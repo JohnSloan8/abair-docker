@@ -1,1 +1,0 @@
-import{j as x}from"./setPrototypeOf.96237ccd.js";import{B as m}from"./App.08cc5580.js";const p=({children:o,width:a="90%",button:r=!1,height:d="100%",padding:e=2,backgroundColor:s="#67add6"})=>x(m,{sx:{backgroundColor:s,zIndex:1},width:a,height:d,border:r?2:4,borderRadius:r?2.5:4,borderColor:"#3e435a",p:r?0:e,maxWidth:400,children:o});export{p as B};
