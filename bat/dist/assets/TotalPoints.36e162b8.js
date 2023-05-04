@@ -1,1 +1,0 @@
-import{a,j as t}from"./setPrototypeOf.96237ccd.js";import{o as i,C as n,T as l}from"./App.b1d30bee.js";const h=({points:e,inChat:r=!1})=>{const[o,s]=a.exports.useState(!1);return a.exports.useEffect(()=>{r&&e!==0&&(s(!0),setTimeout(()=>{s(!1)},2e3))},[e]),t(i,{children:t(n,{sx:{position:"relative"},children:t(l,{variant:o?"h4":"h5",children:e})})})};export{h as T};
