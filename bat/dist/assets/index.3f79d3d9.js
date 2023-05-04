@@ -1,0 +1,39 @@
+import{L as b,j as s,X as E,a as k}from"./setPrototypeOf.96237ccd.js";import{u as Y,a as Z,b as ee,c as ae,R as te,m as A}from"./usePopulateVerbsTensesForms.ce070c14.js";import{u as se,M as ne}from"./robot.4c5671b4.js";import{s as q,_ as re,g as w,e as D,h as I,i as T,as as P,at as V,f as R,j as ie,k as oe,au as le,av as ce,aw as ue,ax as de,b as Q,O as he,Q as me,u as be,a as _,d as ge,W as pe,H as fe,S as xe,P as ve,ay as Ee,B as u,T as y,A as ye,C as S}from"./App.1eb4defe.js";import{b as Se}from"./index.26a00038.js";import{c as Ce,S as ke}from"./usePushRandomResponse.05f4bbcf.js";import{B as F}from"./BatBox.d1aea7d4.js";import"./index.module.99d47a0b.js";import"./translationGA.a39e0647.js";const we=async(n,a,r,e,t,i)=>{console.log("userID:",n);try{const{data:l,error:o}=await q.from("bat_chats").insert({user_id:n,verb:a,tense:r,form:e,questions:t,intro:i}).select("*").single();if(o)throw o;if(l)return l}catch(l){alert(l.message)}},De=async(n,a,r)=>{try{const{data:e,error:t}=await q.from("bat_questions").select("id").in("verb_id",n).in("tense_id",a).in("form_id",r);if(t)throw t;return e}catch(e){alert(e.message)}},Ie=()=>{const{profile:n}=re(),{selectedVerb:a}=w(),{t:r}=D(),{selectedTense:e}=I(),{selectedForm:t}=T(),i=Ce();return()=>{let o=i([],"filler","intro","greeting","naive",{name:n!==null&&n.username!==null?n.username:"there"});return o=i(o,"filler","intro","taskDescription","basic",{verb:a!==void 0?a.name:r("task.allVerbs"),tense:e!==void 0?e.name:r("task.allTenses"),form:t!==void 0?t.name:r("task.allForms")}),o=i(o,"filler","intro","questionDescription","basic",{}),o=i(o,"filler","intro","getReady","basic",{}),o}},C=({label:n,value:a,handleChange:r,items:e,all:t=!0,allDisplay:i=""})=>b(ke,{label:n,value:a,onChange:r,sx:{width:"100%",color:"#fff",textAlign:"center"},children:[t&&s(P,{value:"all",children:i},"all"),e.map((l,o)=>s(P,{value:l,children:l},o))]});function Te(){const{selectedVerb:n}=w(),{selectedTense:a}=I(),{selectedForm:r}=T(),{setQuestionSet:e}=V(),{verbs:t}=R(),{tenses:i}=ie(),{forms:l}=oe();return()=>{const f=n!==void 0?[n.id]:t.map(d=>d.id),x=a!==void 0?[a.id]:i.map(d=>d.id),g=r!==void 0?[r.id]:l.map(d=>d.id);De(f,x,g).then(d=>{d!==void 0?e(d.map(p=>p.id)):console.log("question set undefined")})}}const Ae=(n,a)=>{const r=new Array(a);let e=n.length;const t=new Array(e);for(a>e&&(a=e);a--;){const i=Math.floor(Math.random()*e);r[a]=n[i in t?t[i]:i],t[i]=--e in t?t[e]:e}return r},Pe=()=>{const n=E(le),{selectedVerb:a,setSelectedVerb:r}=w(),e=E(ce),{selectedTense:t,setSelectedTense:i}=I(),l=E(ue),{selectedForm:o,setSelectedForm:f}=T(),{noQuestions:x}=de(),{questionSet:g}=V(),[d,p]=k.exports.useState(!1),{chats:j,setChats:B}=Q(),{setIntro:M}=he(),{setOutro:O}=me(),H=be(),{session:v}=_(),G=Te(),N=Ie(),{setAdjacencyPairs:W}=ge(),{setAnimatingOutro:$}=pe(),z=()=>{v!==null&&(p(!0),G())},{setMessageInputDisabled:L}=fe(),{t:h}=D(),{setShowAvailablePoints:X}=xe(),{setShowPoints:J}=ve(),{setShowHome:K}=Ee();return k.exports.useEffect(()=>{if(g.length!==0&&v!==null&&d){p(!1),J(!1),K(!1),X(!0),M([]),O([]),W([]),L(!0),$(!1);const c=N(),m=Ae(g,x);we(v.user.id,a!==void 0?a.name:null,t!==void 0?t.name:null,o!==void 0?o.name:null,m,c).then(U=>{B([...j,U]),H(`${Se}chat`)})}console.log("availableVerbs:",n)},[g]),b(F,{children:[b(u,{children:[s(y,{align:"center",variant:"h6",children:h("headers.verb")}),s(u,{border:2,borderColor:"primary.dark",borderRadius:1.5,children:s(C,{handleChange:c=>{r(n.find(m=>m.name===c.target.value))},value:a!==void 0?a.name:"all",label:"Verbs",items:n.map(c=>c.name),allDisplay:h("task.allVerbs")})})]}),b(u,{mt:1,children:[s(y,{align:"center",variant:"h6",children:h("headers.tense")}),s(u,{border:2,borderColor:"primary.dark",borderRadius:1.5,children:s(C,{handleChange:c=>{i(e.find(m=>m.name===c.target.value))},value:t!==void 0?t.name:"all",label:"Tenses",items:e.map(c=>c.name),allDisplay:h("task.allTenses")})})]}),b(u,{mt:1,children:[s(y,{align:"center",variant:"h6",children:h("headers.form")}),s(u,{border:2,borderColor:"primary.dark",borderRadius:1.5,children:s(C,{handleChange:c=>{f(l.find(m=>m.name===c.target.value))},value:o!==void 0?o.name:"all",label:"Forms",items:l.map(c=>c.name),allDisplay:h("task.allForms")})})]}),s(u,{mt:3,children:s(F,{button:!0,width:"100%",children:s(ye,{size:"large",fullWidth:!0,label:h("buttons.start"),onClick:()=>{z()},selected:!0,color:"secondary"})})})]})},Fe=()=>{Y(),Z(),ee();const{verbs:n}=R(),{chats:a}=Q(),{session:r}=_(),e=ae(),t=se(),{i18n:i}=D();return k.exports.useEffect(()=>{n.length===0&&e(),a.length===0&&r!==null&&t(r.user.id)},[r]),b(u,{children:[s(ne,{title:"SetTask"}),s(S,{pt:2,children:s(te,{})}),s(S,{py:1,px:2,flexDirection:"column",children:b(u,{width:"95%",height:170,px:1,children:[s(u,{width:"100%",height:"100%",sx:{display:i.language==="ga"?"block":"none"},children:s(A,{style:{whiteSpace:"pre-wrap",minHeight:170,width:"100%"},sequence:[1e3,"Pioc briathar, ",200,"Pioc briathar, aimsir,",200,`Pioc briathar, aimsir, agus foirm.
+`,500,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le`,200,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED'`,200,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.`,500,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.
+Is f\xE9idir liom cabhr\xFA leat tr\xED nodanna agus molta\xED a thabhairt duit.`,500,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.
+Is f\xE9idir liom cabhr\xFA leat tr\xED nodanna agus molta\xED a thabhairt duit.
+T\xE1 10 bpointe ag dul ar gach ceist.`,400,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.
+Is f\xE9idir liom cabhr\xFA leat tr\xED nodanna agus molta\xED a thabhairt duit.
+T\xE1 10 bpointe ag dul ar gach ceist..`,400,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.
+Is f\xE9idir liom cabhr\xFA leat tr\xED nodanna agus molta\xED a thabhairt duit.
+T\xE1 10 bpointe ag dul ar gach ceist...`,500,`Pioc briathar, aimsir, agus foirm.
+Cuirfidh m\xE9 5 gceist ort le 'l\xEDon na bearna\xED' iontu.
+Is f\xE9idir liom cabhr\xFA leat tr\xED nodanna agus molta\xED a thabhairt duit.
+T\xE1 10 bpointe ag dul ar gach ceist...
+An bhfuil t\xFA in ann 50 a shroichint? `],wrapper:"span",cursor:!0,repeat:0})}),s(u,{width:"100%",height:"100%",sx:{display:i.language==="en"?"block":"none"},children:s(A,{style:{whiteSpace:"pre-wrap",minHeight:170,width:"100%"},sequence:[1e3,"Choose a verb, ",200,"Choose a verb, tense,",200,`Choose a verb, tense, and form to practice.
+`,500,`Choose a verb, tense, and form to practice.
+I will ask you 5`,200,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank'`,200,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.`,500,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.
+I can help by giving hints and suggestions.`,500,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.
+I can help by giving hints and suggestions.
+There are 10 points per question.`,400,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.
+I can help by giving hints and suggestions.
+There are 10 points per question..`,400,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.
+I can help by giving hints and suggestions.
+There are 10 points per question...`,500,`Choose a verb, tense, and form to practice.
+I will ask you 5 'fill in the blank' questions.
+I can help by giving hints and suggestions.
+There are 10 points per question...
+Can you score 50?`],wrapper:"span",cursor:!0,repeat:0})})]})}),s(S,{children:s(Pe,{})})]})},He=Fe;export{He as default};
