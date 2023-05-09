@@ -19,17 +19,17 @@ const stringifyConjugation = (word, target) => {
         return "incorrectTense";
     }
     else if (wordForm !== targetForm) {
-        if ([1, 2, 6].includes(wordForm)) {
-            return "incorrectForm";
-        }
-        else if ([3, 4, 5].includes(wordForm)) {
-            return "incorrectNegativeForm";
-        }
+        return "incorrectForm";
     }
     else if (wordVerb === targetVerb &&
         wordTense === targetTense &&
         wordForm === targetForm) {
-        return "incorrectPerson";
+        if ([1, 2, 6].includes(wordForm)) {
+            return "incorrectPerson";
+        }
+        else if ([3, 4, 5].includes(wordForm)) {
+            return "incorrectNegativeForm";
+        }
     }
     else
         return "none";
